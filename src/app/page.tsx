@@ -2,13 +2,21 @@ import Image from "next/image";
 import { PageWrapper } from "./page-wrapper";
 import { NavBar } from "./navBar";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+
 export default function Home() {
   return (
     <main className="md:p-16 p-8 flex min-h-screen w-screen flex-col justify-between items-center">
       <NavBar />
-      <div className="flex py-16"></div>
+      <div className="flex py-8"></div>
       <PageWrapper>
-        <main className="flex flex-col-reverse md:flex-row items-center justify-between w-full md:gap-32 gap-8 p-8 py-16 group bg-sky-900 rounded-2xl text-sky-50">
+        <main className="flex flex-col-reverse md:flex-row items-center justify-between w-full md:gap-32 gap-8 p-8 py-12 group bg-sky-900 rounded-2xl text-sky-50">
           <div className="">
             <h1 className="font-bold text-5xl">Study with your own pace with eBacc</h1>
             <p className="py-2">Join eBacc today and unlock your full academic potential with expert guidance and personalized learning. As a dedicated English Baccalaureate platform, we prepare you for IGCSE success.</p>
@@ -37,13 +45,87 @@ export default function Home() {
           </div>
         </div>
       </PageWrapper>
-      <div className="flex py-4"></div>
+      <div className="flex py-16"></div>
       <PageWrapper>
-        <main className="flex items-center justify-between w-full">
-          Hello World
+        <main className="flex flex-col md:flex-row items-start justify-between gap-4 md:gap-8 w-full overflow-hidden">
+          <div className="h-full w-full">
+            <h1 className="font-semibold text-3xl">Prepare for GCSE with eBacc</h1>
+            <h2 className="text-lg font-light">Educational excellence beyond traditional courses</h2>
+            <div className="py-6">
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-lg">Enhancing GCSE student success</AccordionTrigger>
+                  <AccordionContent className="font-light text-zinc-700">
+                    At eBacc, our mission is to enhance students' academic learning by complementing their initial school curriculum. We prepare students to excel in GCSE (General Certificate of Secondary Education) exams through a rigorous and well-structured program.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-lg">Learning Objectives</AccordionTrigger>
+                  <AccordionContent className="font-light text-zinc-700">
+                    We aim to provide thorough training in key subjects such as Mathematics, Sciences, English, and more, while strengthening French skills for comprehensive GCSE (General Certificate of Secondary Education) preparation.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-lg">Why Choose eBacc?</AccordionTrigger>
+                  <AccordionContent className="font-light text-zinc-700">
+                    With eBacc, students benefit from quality education supplemented by live sessions with our qualified instructors, ensuring thorough and personalized preparation for GCSE exams.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+          <Image
+            className="rounded-2xl md:h-[20rem] w-full object-cover"
+            src={"/student_at_home.jpg"}
+            width={500}
+            height={500}
+            alt="student at home"
+          />
         </main>
       </PageWrapper>
-      <div className="flex py-4"></div>
+      <div className="flex py-16"></div>
+      <PageWrapper>
+        Yoo
+      </PageWrapper>
+      <div className="flex py-16"></div>
+      <PageWrapper>
+        <main className="flex flex-col md:flex-row-reverse items-start justify-between gap-4 md:gap-8 w-full overflow-hidden">
+          <div className="h-full w-full">
+            <h1 className="font-semibold text-3xl">Prepare for GCSE with eBacc</h1>
+            <h2 className="text-lg font-light">Educational excellence beyond traditional courses</h2>
+            <div className="py-6">
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-lg">Enhancing GCSE student success</AccordionTrigger>
+                  <AccordionContent className="font-light text-zinc-700">
+                    At eBacc, our mission is to enhance students' academic learning by complementing their initial school curriculum. We prepare students to excel in GCSE (General Certificate of Secondary Education) exams through a rigorous and well-structured program.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-lg">Learning Objectives</AccordionTrigger>
+                  <AccordionContent className="font-light text-zinc-700">
+                    We aim to provide thorough training in key subjects such as Mathematics, Sciences, English, and more, while strengthening French skills for comprehensive GCSE (General Certificate of Secondary Education) preparation.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-lg">Why Choose eBacc?</AccordionTrigger>
+                  <AccordionContent className="font-light text-zinc-700">
+                    With eBacc, students benefit from quality education supplemented by live sessions with our qualified instructors, ensuring thorough and personalized preparation for GCSE exams.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+          <Image
+            className="rounded-2xl md:h-[20rem] w-full object-cover"
+            src={"/student_at_home.jpg"}
+            width={500}
+            height={500}
+            alt="student at home"
+          />
+        </main>
+      </PageWrapper>
+      <div className="flex py-16"></div>
       <PageWrapper>
         <main className="flex items-center justify-between w-full">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam maiores, cumque dolore non labore illo aliquam inventore enim animi deserunt quo sequi, dicta distinctio? Suscipit aliquid veritatis velit? Voluptatum, nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsum dolorum iste rem ea blanditiis corrupti dicta ullam soluta, dignissimos tempore iusto perspiciatis voluptatibus consectetur incidunt repellat dolorem quod libero. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, eaque amet, excepturi libero voluptates sunt iure perspiciatis explicabo eligendi quis reprehenderit nisi repudiandae blanditiis error. Culpa nesciunt tempora delectus eius. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, exercitationem eligendi architecto aut consequuntur culpa quod hic nobis velit, blanditiis ullam maiores eaque! Harum esse necessitatibus iusto praesentium reprehenderit blanditiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ipsum dolorum fuga doloremque rerum cumque molestias, earum at a eaque sit labore quo porro. Iste porro perspiciatis expedita assumenda quidem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis libero, officia nostrum adipisci id laboriosam ratione alias cumque aliquid animi deserunt quasi vitae debitis in obcaecati fugiat dignissimos facilis nihil? Lorem ipsum dolor sit amet consectetur adipisicing elit. At repellat sequi nostrum, pariatur excepturi eos sit minima numquam sed dolores fugiat ipsum, expedita deleniti alias omnis debitis magnam ex ab! Lorem ipsum dolor, sit amet consectetur adipisicing elit. A neque eveniet, voluptate repellendus reprehenderit deserunt quo ullam quisquam esse! Laudantium dolorem officiis odit necessitatibus nesciunt exercitationem doloribus architecto quaerat placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores repellat provident, nesciunt at doloremque est perspiciatis illum quam, distinctio dolorem temporibus facilis corporis? Autem dignissimos inventore quam libero numquam earum!
