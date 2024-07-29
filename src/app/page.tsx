@@ -2,7 +2,7 @@ import Image from "next/image";
 import { PageWrapper } from "./page-wrapper";
 import { NavBar } from "./navBar";
 import { Contact } from './contact'
-import { Button } from "@nextui-org/react";
+import { Form } from "./Form";
 
 import {
   Accordion,
@@ -65,6 +65,8 @@ export default function Home() {
           </div>
         </div>
       </PageWrapper>
+      <div className="flex py-16"></div>
+      <Form />
       <div className="flex py-16"></div>
       <PageWrapper>
         <main className="flex flex-col md:flex-row items-start justify-between gap-4 md:gap-8 w-full overflow-hidden">
