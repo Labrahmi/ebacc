@@ -252,10 +252,6 @@ interface IProps {
 
 export class Form extends React.Component<IProps, {}> {
     render() {
-
-        const formOverlay = document.getElementById('form-overlay');
-        const joinButton = document.getElementsByClassName('join-button');
-
         return (
             <>
                 <button onClick={(e) => {
@@ -280,8 +276,11 @@ export class Form extends React.Component<IProps, {}> {
                         />
                     </svg>
                 </button>
-                <main id='form-overlay' className='fixed top-0 left-0 hidden flex justify-center items-center p-8 bg-black bg-opacity-50 backdrop-blur w-screen h-screen z-20'>
-                    <div className='bg-white p-8 rounded max-w-[32rem] border shadow-2xl relative'>
+                <main id='form-overlay' className='fixed top-0 left-0 hidden flex justify-center items-center p-8 bg-black bg-opacity-50 w-screen h-screen z-20'>
+                    <div style={{
+                        backgroundImage: "url(/shapes/svg_back.png)",
+                        backgroundSize: "cover",
+                    }} className='bg-white p-8 rounded max-w-[64rem] min-w-[36rem] border shadow-2xl relative'>
                         <div onClick={(e) => {
                             e.preventDefault();
                             document.getElementById('form-overlay')?.classList.toggle('hidden');
@@ -294,28 +293,48 @@ export class Form extends React.Component<IProps, {}> {
                         <h1 className='font-semibold text-2xl py-4'>Pre-registration Form</h1>
                         <div className='gap-4 flex flex-col'>
                             <div className='w-full'>
-                                <div className='flex gap-2'>
-                                    <div>
-                                        <h1 className='text-sm text-zinc-700'>Student's First Name</h1>
-                                        <input className='p-1 border rounded border-zinc-500 w-full' type="text" />
+                                <div className='flex gap-2 w-full'>
+                                    <div className='w-full'>
+                                        <h1 className='text-sm text-zinc-600'>Student's First Name</h1>
+                                        <input placeholder='Jhon' className='p-2 text-sm border rounded border-zinc-500 w-full' type="text" />
                                     </div>
-                                    <div>
-                                        <h1 className='text-sm text-zinc-700'>Student's Last Name</h1>
-                                        <input className='p-1 border rounded border-zinc-500 w-full' type="text" />
+                                    <div className='w-full'>
+                                        <h1 className='text-sm text-zinc-600'>Student's Last Name</h1>
+                                        <input placeholder='Doe' className='p-2 text-sm border rounded border-zinc-500 w-full' type="text" />
                                     </div>
                                 </div>
                             </div>
                             <div className='w-full'>
-                                <h1 className='text-sm text-zinc-700'>Date Of Birth</h1>
-                                <input className='p-1 border rounded border-zinc-500 w-full' type="date" />
+                                <h1 className='text-sm text-zinc-600'>Date Of Birth</h1>
+                                <input className='p-2 text-sm border rounded border-zinc-500 w-full' type="date" />
                             </div>
                             <div className='w-full'>
-                                <h1 className='text-sm text-zinc-700'>Country</h1>
-                                <input className='p-1 border rounded border-zinc-500 w-full' type="text" />
-                                <select name="" id="">
-
+                                <h1 className='text-sm text-zinc-600'>Country</h1>
+                                <select className='p-2 text-sm border rounded border-zinc-500 w-full' name="" id="">
+                                    <option value="Morocco">Morocco</option>
                                 </select>
                             </div>
+                            <div className='w-full'>
+                                <h1 className='text-sm text-zinc-600'>City</h1>
+                                <select className='p-2 text-sm border rounded border-zinc-500 w-full' name="" id="">
+                                    <option value="Casablanca">Casablanca</option>
+                                </select>
+                            </div>
+                            <div className='w-full'>
+                                <h1 className='text-sm text-zinc-600'>Email</h1>
+                                <input placeholder='youremail@mail.com' className='p-2 text-sm border rounded border-zinc-500 w-full' name="" id=""></input>
+                            </div>
+                            <div className='flex py-0'></div>
+                            <div className='w-full'>
+                                <input className='p-2 text-sm border rounded border-zinc-500 w-full cursor-pointer bg-zinc-800 text-white' name="" id="" type="submit" value="Submit" />
+                            </div>
+                            <div className='w-full'>
+                                <input className='p-2 text-sm border rounded border-zinc-500 w-full cursor-pointer bg-zinc-800 text-white' name="" id="" type="submit" value="Submit" />
+                            </div>
+                            
+                            {/* Are YOU CURRENTLY
+                            Homeschooled
+                            Enrolled in a physical school */}
                         </div>
                     </div>
                 </main>

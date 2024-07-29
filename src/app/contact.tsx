@@ -80,10 +80,10 @@ export class Contact extends React.Component<IProps, {}> {
                             <div className='text-sm text-zinc-600'>Fill up the form below to send us a message</div>
                             <div className='py-1'></div>
                             <form className='space-y-2' action="#" method="POST">
-                                <input required={true} type="text" name="name" id="name" className="w-full p-3 border border-zinc-300 rounded-md focus:outline-none" placeholder="Full Name*" />
-                                <input required={true} type="email" name="email" id="email" className="w-full p-3 border border-zinc-300 rounded-md focus:outline-none" placeholder="Email Address*" />
-                                <input required={true} type="tel" name="tel" id="tel" className="w-full p-3 border border-zinc-300 rounded-md focus:outline-none" placeholder="Phone Number*" />
-                                <textarea rows={5} name="name" id="message" className="w-full p-3 border border-zinc-300 rounded-md focus:outline-none" placeholder="Type your message here..." ></textarea>
+                                <input required={true} type="text" name="name" id="name" className="w-full p-3 border-b border-zinc-300 focus-visible:border-zinc-700 rounded-sm focus:outline-none transition-all duration-300 outline-none" placeholder="Full Name*" />
+                                <input required={true} type="email" name="email" id="email" className="w-full p-3 border-b border-zinc-300 focus-visible:border-zinc-700 rounded-sm focus:outline-none transition-all duration-300 outline-none" placeholder="Email Address*" />
+                                <input required={true} type="tel" name="tel" id="tel" className="w-full p-3 border-b border-zinc-300 focus-visible:border-zinc-700 rounded-sm focus:outline-none transition-all duration-300 outline-none" placeholder="Phone Number*" />
+                                <textarea rows={5} name="name" id="message" className="w-full p-3 border-b border-zinc-300 focus-visible:border-zinc-700 rounded-sm focus:outline-none transition-all duration-300 outline-none" placeholder="Type your message here..." ></textarea>
                                 <div className='py-1'></div>
                                 <div>
                                     <button type="submit" className="w-full bg-zinc-900 text-white p-2 rounded-md hover:bg-zinc-800 transition-all duration-200 ease-in-out">Send</button>
