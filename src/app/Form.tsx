@@ -2,16 +2,268 @@
 
 import React, { ReactNode } from 'react'
 import Image from 'next/image';
-import { useRef } from 'react';
+
+const countryCities = {
+    Argentina: [
+        "Buenos Aires",
+        "Córdoba",
+        "Rosario",
+        "Mendoza",
+        "La Plata",
+        "San Miguel de Tucumán",
+        "Mar del Plata",
+        "Salta",
+    ],
+    Australia: [
+        "Sydney",
+        "Melbourne",
+        "Brisbane",
+        "Perth",
+        "Adelaide",
+        "Gold Coast",
+        "Canberra",
+        "Hobart",
+    ],
+    Brazil: [
+        "São Paulo",
+        "Rio de Janeiro",
+        "Brasília",
+        "Salvador",
+        "Fortaleza",
+        "Belo Horizonte",
+        "Manaus",
+        "Curitiba",
+    ],
+    Canada: [
+        "Toronto",
+        "Vancouver",
+        "Montreal",
+        "Calgary",
+        "Edmonton",
+        "Ottawa",
+        "Winnipeg",
+        "Quebec City",
+    ],
+    China: [
+        "Beijing",
+        "Shanghai",
+        "Guangzhou",
+        "Shenzhen",
+        "Chengdu",
+        "Chongqing",
+        "Tianjin",
+        "Wuhan",
+    ],
+    Egypt: [
+        "Cairo",
+        "Alexandria",
+        "Giza",
+        "Shubra El Kheima",
+        "Port Said",
+        "Suez",
+        "Luxor",
+        "Aswan",
+    ],
+    Finland: [
+        "Helsinki",
+        "Espoo",
+        "Tampere",
+        "Vantaa",
+        "Oulu",
+        "Turku",
+        "Jyväskylä",
+        "Lahti",
+    ],
+    France: [
+        "Paris",
+        "Marseille",
+        "Lyon",
+        "Toulouse",
+        "Nice",
+        "Nantes",
+        "Strasbourg",
+        "Montpellier",
+    ],
+    Germany: [
+        "Berlin",
+        "Munich",
+        "Frankfurt",
+        "Hamburg",
+        "Cologne",
+        "Stuttgart",
+        "Düsseldorf",
+        "Dresden",
+    ],
+    India: [
+        "Mumbai",
+        "Delhi",
+        "Bangalore",
+        "Chennai",
+        "Kolkata",
+        "Hyderabad",
+        "Pune",
+        "Ahmedabad",
+    ],
+    Italy: [
+        "Rome",
+        "Milan",
+        "Naples",
+        "Turin",
+        "Palermo",
+        "Genoa",
+        "Bologna",
+        "Florence",
+    ],
+    Japan: [
+        "Tokyo",
+        "Osaka",
+        "Nagoya",
+        "Yokohama",
+        "Kyoto",
+        "Fukuoka",
+        "Sapporo",
+        "Kobe",
+    ],
+    Mexico: [
+        "Mexico City",
+        "Guadalajara",
+        "Monterrey",
+        "Puebla",
+        "Tijuana",
+        "León",
+        "Ciudad Juárez",
+        "Cancún",
+    ],
+    Morocco: [
+        "Casablanca",
+        "Rabat",
+        "Marrakech",
+        "Fes",
+        "Tangier",
+        "Agadir",
+        "Meknes",
+        "Oujda",
+    ],
+    Netherlands: [
+        "Amsterdam",
+        "Rotterdam",
+        "The Hague",
+        "Utrecht",
+        "Eindhoven",
+        "Tilburg",
+        "Groningen",
+        "Almere",
+    ],
+    "New Zealand": [
+        "Auckland",
+        "Wellington",
+        "Christchurch",
+        "Hamilton",
+        "Tauranga",
+        "Dunedin",
+        "Palmerston North",
+        "Napier",
+    ],
+    Russia: [
+        "Moscow",
+        "Saint Petersburg",
+        "Novosibirsk",
+        "Yekaterinburg",
+        "Nizhny Novgorod",
+        "Kazan",
+        "Chelyabinsk",
+        "Samara",
+    ],
+    "South Africa": [
+        "Johannesburg",
+        "Cape Town",
+        "Durban",
+        "Pretoria",
+        "Port Elizabeth",
+        "Bloemfontein",
+        "East London",
+        "Polokwane",
+    ],
+    "South Korea": [
+        "Seoul",
+        "Busan",
+        "Incheon",
+        "Daegu",
+        "Daejeon",
+        "Gwangju",
+        "Suwon",
+        "Ulsan",
+    ],
+    Spain: [
+        "Madrid",
+        "Barcelona",
+        "Valencia",
+        "Seville",
+        "Zaragoza",
+        "Málaga",
+        "Murcia",
+        "Palma",
+    ],
+    Singapore: ["Singapore"],
+    Sweden: [
+        "Stockholm",
+        "Gothenburg",
+        "Malmö",
+        "Uppsala",
+        "Västerås",
+        "Örebro",
+        "Linköping",
+        "Helsingborg",
+    ],
+    Turkey: [
+        "Istanbul",
+        "Ankara",
+        "Izmir",
+        "Bursa",
+        "Adana",
+        "Gaziantep",
+        "Konya",
+        "Antalya",
+    ],
+    "United Kingdom": [
+        "London",
+        "Manchester",
+        "Birmingham",
+        "Glasgow",
+        "Liverpool",
+        "Edinburgh",
+        "Leeds",
+        "Bristol",
+    ],
+    "United States": [
+        "New York",
+        "Los Angeles",
+        "Chicago",
+        "Houston",
+        "Phoenix",
+        "Philadelphia",
+        "San Antonio",
+        "San Diego",
+    ],
+};
 
 interface IProps {
 }
 
 export class Form extends React.Component<IProps, {}> {
     render() {
+
+        const formOverlay = document.getElementById('form-overlay');
+        const joinButton = document.getElementsByClassName('join-button');
+
         return (
             <>
-                <button className="p-2 px-4 rounded border bg-white flex justify-center items-center gap-2">
+                <button onClick={(e) => {
+                    e.preventDefault();
+                    console.log('clicked');
+                    document.getElementById('form-overlay')?.classList.toggle('hidden');
+                    document.body.style.overflow = 'hidden';
+                }} className="p-2 px-4 rounded border bg-white flex justify-center items-center gap-2 join-button">
                     <h1 className="">Join Us Now</h1>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -28,15 +280,43 @@ export class Form extends React.Component<IProps, {}> {
                         />
                     </svg>
                 </button>
-                <main className='fixed hidden top-0 left-0 flex justify-center items-center p-8 bg-black bg-opacity-50 backdrop-blur-sm w-screen h-screen z-20'>
+                <main id='form-overlay' className='fixed top-0 left-0 hidden flex justify-center items-center p-8 bg-black bg-opacity-50 backdrop-blur w-screen h-screen z-20'>
                     <div className='bg-white p-8 rounded max-w-[32rem] border shadow-2xl relative'>
-                        <div className='absolute top-0 right-0 p-2 rounded-full cursor-pointer'>
+                        <div onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById('form-overlay')?.classList.toggle('hidden');
+                            document.body.style.overflow = 'auto';
+                        }} className='absolute top-0 right-0 p-2 rounded-full cursor-pointer'>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor" className="size-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                             </svg>
                         </div>
                         <h1 className='font-semibold text-2xl py-4'>Pre-registration Form</h1>
-                        <p className='font-light text-zinc-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat beatae ab molestiae in dolore neque aperiam hic magni aut, ipsa quasi pariatur praesentium possimus autem aspernatur reprehenderit obcaecati iusto adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde laborum, magnam facilis quia doloribus pariatur id ipsam placeat? Dignissimos aliquid officiis cupiditate nesciunt cumque nam ratione ut doloremque praesentium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate officia voluptas harum ad architecto hic recusandae similique excepturi asperiores accusamus illo facilis sed perferendis, exercitationem odio temporibus? Saepe, debitis minus.</p>
+                        <div className='gap-4 flex flex-col'>
+                            <div className='w-full'>
+                                <div className='flex gap-2'>
+                                    <div>
+                                        <h1 className='text-sm text-zinc-700'>Student's First Name</h1>
+                                        <input className='p-1 border rounded border-zinc-500 w-full' type="text" />
+                                    </div>
+                                    <div>
+                                        <h1 className='text-sm text-zinc-700'>Student's Last Name</h1>
+                                        <input className='p-1 border rounded border-zinc-500 w-full' type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='w-full'>
+                                <h1 className='text-sm text-zinc-700'>Date Of Birth</h1>
+                                <input className='p-1 border rounded border-zinc-500 w-full' type="date" />
+                            </div>
+                            <div className='w-full'>
+                                <h1 className='text-sm text-zinc-700'>Country</h1>
+                                <input className='p-1 border rounded border-zinc-500 w-full' type="text" />
+                                <select name="" id="">
+
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </main>
             </>
