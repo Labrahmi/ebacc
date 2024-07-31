@@ -1,13 +1,9 @@
-"use client";
+'use client';
 
 import { motion, AnimatePresence } from "framer-motion";
 import React, { ReactNode } from "react";
 
-interface PageWrapperProps {
-  children: ReactNode;
-}
-
-export const PageWrapper: React.FC<PageWrapperProps> = ({ children }) => (
+const PageWrapper: React.FC<{ children: ReactNode }> = ({ children }) => (
   <AnimatePresence>
     <motion.div
       className="w-full"
@@ -15,9 +11,10 @@ export const PageWrapper: React.FC<PageWrapperProps> = ({ children }) => (
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: 0.5 }}
       viewport={{ once: true }}
-      
     >
       {children}
     </motion.div>
   </AnimatePresence>
 );
+
+export default PageWrapper;
