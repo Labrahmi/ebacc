@@ -1,4 +1,10 @@
 import Overview from "@/components/Home/Home";
+import NavBar from "@/components/Navbar/Navbar";
+import PageWrapper from "@/components/Page-Wrapper/Page-Wrapper";
+import Image from "next/image";
+import Form from "@/components/Form/Form";
+import Contact from "@/components/Contact/Contact";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function Home() {
   return (
