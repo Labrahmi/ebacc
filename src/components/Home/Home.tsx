@@ -1,6 +1,21 @@
-import Overview from "@/components/Home/Home";
+"use client";
 
-export default function Home() {
+import React from "react";
+import Image from "next/image";
+import NavBar from "@/components/Navbar/Navbar";
+import PageWrapper from "@/components/Page-Wrapper/Page-Wrapper";
+import Contact from "@/components/Contact/Contact";
+import Pricing from "@/components/Pricing/Pricing";
+import MainPage from "@/components/MainPage/MainPage";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const Overview = () => {
   return (
     <main className="md:p-16 p-8 flex min-h-screen w-screen flex-col justify-between items-center">
       <NavBar />
@@ -31,7 +46,7 @@ export default function Home() {
         </main>
         <div>
           <div className="flex flex-row-reverse justify-center items-center py-8 gap-2 bg-sky-900 rounded-r-2xl relative -top-6">
-            <Form />
+            {/* <Form /> */}
             <button className="p-2 px-4 flex justify-center items-center gap-2 text-sky-200 hover:text-white transition-all">
               <h1>Learn More</h1>
             </button>
@@ -274,135 +289,139 @@ export default function Home() {
       </PageWrapper>
       <div className="flex py-16"></div>
       <PageWrapper>
+        <Pricing></Pricing>
+      </PageWrapper>
+      <div className="flex py-16"></div>
+      <PageWrapper>
         <Contact />
       </PageWrapper>
       <div className="flex py-16"></div>
 
-
-
       {/* <PageWrapper>
-        <div className="">
-          <h1 className="text-2xl font-semibold">
-            ⌘ Hello World, This is me Youssef
-          </h1>
-        </div>
-        <div className="space-y-4 my-4">
-          <p className="text-zinc-800">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            quis perspiciatis hic doloremque exercitationem animi, sequi quas
-            corrupti a et quod aliquam eveniet repudiandae neque adipisci, quam
-            fugiat vitae delectus.
-          </p>
-          <div className="space-x-2">
-            <button
-              style={{
-                backgroundImage: "url(/shapes/svg_back.png)",
-                backgroundSize: "cover",
-              }}
-              className="px-4 p-2 bg-[#061770] text-white border rounded-md font-semibold transition"
-            >
-              Primary Button
-            </button>
-            <button
-              style={{
-                backgroundImage: "url(/shapes/svg_back.png)",
-                backgroundSize: "cover",
-              }}
-              className="px-4 p-2 bg-[#cc2132] text-white border rounded-md font-semibold transition"
-            >
-              Secondary Button
-            </button>
-            <button className="px-4 p-2  text-zinc-800 rounded-md font-medium hover:text-black transition">
-              {" "}
-              Secondary Button
-            </button>
-          </div>
-        </div>
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 my-8">
-          <div
-            style={{
-              backgroundImage: "url(/shapes/svg_back.png)",
-              backgroundSize: "cover",
-            }}
-            className="flex w-full border rounded-md overflow-hidden bg-white shadow-zinc-200 shadow-2xl cursor-default hover:shadow-zinc-300 transition"
-          >
-            <div className="p-4 text-zinc-800">
-              <a className="w-fit block" href="#">
-                <h1 className="font-semibold text-lg py-1 text-black hover:underline w-fit">
-                  Ttitle Here
-                </h1>
-              </a>
-              <p className="text-sm">
-                adipisicing e quisquam voluptate rem ipsa quam natus nisi
-                laudantium cum temporibus repudiandae lore
-              </p>
+            <div className="">
+              <h1 className="text-2xl font-semibold">
+                ⌘ Hello World, This is me Youssef
+              </h1>
             </div>
-            <Image
-              className="w-32 aspect-square object-cover"
-              src="/education_pattern.jpg"
-              alt="Next.js logo"
-              width={500}
-              height={500}
-            />
-          </div>
-          <div
-            style={{
-              backgroundImage: "url(/shapes/svg_back.png)",
-              backgroundSize: "cover",
-            }}
-            className="flex w-full border rounded-md overflow-hidden bg-white shadow-zinc-200 shadow-2xl cursor-default hover:shadow-zinc-300 transition"
-          >
-            <div className="p-4 text-zinc-800">
-              <a className="w-fit block" href="#">
-                <h1 className="font-semibold text-lg py-1 text-black hover:underline w-fit">
-                  Ttitle Here
-                </h1>
-              </a>
-              <p className="text-sm">
-                icing ab dignissimos nemo ducimus, hic sint! Libero velit quidem
-                quaerat ex. elit. Sunt natus nisi laudantium cum temporibus
-                repudiandae
+            <div className="space-y-4 my-4">
+              <p className="text-zinc-800">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
+                quis perspiciatis hic doloremque exercitationem animi, sequi quas
+                corrupti a et quod aliquam eveniet repudiandae neque adipisci, quam
+                fugiat vitae delectus.
               </p>
+              <div className="space-x-2">
+                <button
+                  style={{
+                    backgroundImage: "url(/shapes/svg_back.png)",
+                    backgroundSize: "cover",
+                  }}
+                  className="px-4 p-2 bg-[#061770] text-white border rounded-md font-semibold transition"
+                >
+                  Primary Button
+                </button>
+                <button
+                  style={{
+                    backgroundImage: "url(/shapes/svg_back.png)",
+                    backgroundSize: "cover",
+                  }}
+                  className="px-4 p-2 bg-[#cc2132] text-white border rounded-md font-semibold transition"
+                >
+                  Secondary Button
+                </button>
+                <button className="px-4 p-2  text-zinc-800 rounded-md font-medium hover:text-black transition">
+                  {" "}
+                  Secondary Button
+                </button>
+              </div>
             </div>
-            <Image
-              className="w-32 aspect-square object-cover"
-              src="/IMG_8745.jpg"
-              alt="Next.js logo"
-              width={500}
-              height={500}
-            />
-          </div>
-          <div
-            style={{
-              backgroundImage: "url(/shapes/svg_back.png)",
-              backgroundSize: "cover",
-            }}
-            className="flex w-full border rounded-md overflow-hidden bg-white shadow-zinc-200 shadow-2xl cursor-default hover:shadow-zinc-300 transition"
-          >
-            <div className="p-4 text-zinc-800">
-              <a className="w-fit block" href="#">
-                <h1 className="font-semibold text-lg py-1 text-black hover:underline w-fit">
-                  Ttitle Here
-                </h1>
-              </a>
-              <p className="text-sm">
-                ? Perspiciatis minima a fugit inventore cum voluptatum adipisci
-                iusto accusamus repellendus doloremque doloribus, ad, fuga
-                nobis?
-              </p>
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 my-8">
+              <div
+                style={{
+                  backgroundImage: "url(/shapes/svg_back.png)",
+                  backgroundSize: "cover",
+                }}
+                className="flex w-full border rounded-md overflow-hidden bg-white shadow-zinc-200 shadow-2xl cursor-default hover:shadow-zinc-300 transition"
+              >
+                <div className="p-4 text-zinc-800">
+                  <a className="w-fit block" href="#">
+                    <h1 className="font-semibold text-lg py-1 text-black hover:underline w-fit">
+                      Ttitle Here
+                    </h1>
+                  </a>
+                  <p className="text-sm">
+                    adipisicing e quisquam voluptate rem ipsa quam natus nisi
+                    laudantium cum temporibus repudiandae lore
+                  </p>
+                </div>
+                <Image
+                  className="w-32 aspect-square object-cover"
+                  src="/education_pattern.jpg"
+                  alt="Next.js logo"
+                  width={500}
+                  height={500}
+                />
+              </div>
+              <div
+                style={{
+                  backgroundImage: "url(/shapes/svg_back.png)",
+                  backgroundSize: "cover",
+                }}
+                className="flex w-full border rounded-md overflow-hidden bg-white shadow-zinc-200 shadow-2xl cursor-default hover:shadow-zinc-300 transition"
+              >
+                <div className="p-4 text-zinc-800">
+                  <a className="w-fit block" href="#">
+                    <h1 className="font-semibold text-lg py-1 text-black hover:underline w-fit">
+                      Ttitle Here
+                    </h1>
+                  </a>
+                  <p className="text-sm">
+                    icing ab dignissimos nemo ducimus, hic sint! Libero velit quidem
+                    quaerat ex. elit. Sunt natus nisi laudantium cum temporibus
+                    repudiandae
+                  </p>
+                </div>
+                <Image
+                  className="w-32 aspect-square object-cover"
+                  src="/IMG_8745.jpg"
+                  alt="Next.js logo"
+                  width={500}
+                  height={500}
+                />
+              </div>
+              <div
+                style={{
+                  backgroundImage: "url(/shapes/svg_back.png)",
+                  backgroundSize: "cover",
+                }}
+                className="flex w-full border rounded-md overflow-hidden bg-white shadow-zinc-200 shadow-2xl cursor-default hover:shadow-zinc-300 transition"
+              >
+                <div className="p-4 text-zinc-800">
+                  <a className="w-fit block" href="#">
+                    <h1 className="font-semibold text-lg py-1 text-black hover:underline w-fit">
+                      Ttitle Here
+                    </h1>
+                  </a>
+                  <p className="text-sm">
+                    ? Perspiciatis minima a fugit inventore cum voluptatum adipisci
+                    iusto accusamus repellendus doloremque doloribus, ad, fuga
+                    nobis?
+                  </p>
+                </div>
+                <Image
+                  className="w-32 aspect-square object-cover"
+                  src="/IMG_7784.png"
+                  alt="Next.js logo"
+                  width={500}
+                  height={500}
+                />
+              </div>
             </div>
-            <Image
-              className="w-32 aspect-square object-cover"
-              src="/IMG_7784.png"
-              alt="Next.js logo"
-              width={500}
-              height={500}
-            />
-          </div>
-        </div>
-      </PageWrapper> */}
+          </PageWrapper> */}
 
       <NavBar />
     </main>
   );
-}
+};
+
+export default Overview;
