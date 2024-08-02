@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Contact: React.FC = () => {
   return (
-    <div className="container mx-auto p-8">
+    <div className="mx-auto py-8">
       <h1 className="text-3xl md:text-4xl font-bold text-gray-800 text-center">
         Contact Us
       </h1>
@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
               type="text"
               name="name"
               id="name"
-              className="w-full p-3 border-b border-gray-300 focus:border-gray-700 rounded focus:outline-none transition"
+              className="w-full p-3 border-b border-gray-300 focus:border-gray-700 rounded-sm focus:outline-none transition"
               placeholder="Full Name*"
             />
             <input
@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
               type="email"
               name="email"
               id="email"
-              className="w-full p-3 border-b border-gray-300 focus:border-gray-700 rounded focus:outline-none transition"
+              className="w-full p-3 border-b border-gray-300 focus:border-gray-700 rounded-sm focus:outline-none transition"
               placeholder="Email Address*"
             />
             <input
@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
               type="tel"
               name="tel"
               id="tel"
-              className="w-full p-3 border-b border-gray-300 focus:border-gray-700 rounded focus:outline-none transition"
+              className="w-full p-3 border-b border-gray-300 focus:border-gray-700 rounded-sm focus:outline-none transition"
               placeholder="Phone Number*"
             />
             <textarea
@@ -87,12 +87,12 @@ const Contact: React.FC = () => {
               rows={5}
               name="message"
               id="message"
-              className="w-full p-3 border-b border-gray-300 focus:border-gray-700 rounded focus:outline-none transition"
+              className="w-full p-3 border-b border-gray-300 focus:border-gray-700 rounded-sm focus:outline-none transition"
               placeholder="Type your message here..."
             ></textarea>
             <button
               type="submit"
-              className="w-full bg-gray-800 text-white p-3 rounded hover:bg-gray-700 transition"
+              className="w-full bg-gray-800 text-white p-3 rounded-sm hover:bg-gray-700 transition"
             >
               Send
             </button>
@@ -123,7 +123,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className="bg-white p-6 shadow-xl rounded-lg flex flex-col items-start hover:shadow-2xl transition"
+    className="bg-white p-6 shadow-2xl shadow-zinc-200 rounded-lg flex flex-col items-start hover:shadow-2xl transition"
   >
     <div className="flex items-center mb-2">
       <svg
